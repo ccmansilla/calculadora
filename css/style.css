@@ -1,5 +1,6 @@
 .calculadora {
-    max-width: 800px;
+    max-width: 900px;
+    min-width: 600px;
     margin: auto;
 }
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
@@ -12,11 +13,18 @@
 
 .btnCalc {
     width: 100%;
+    margin: 5%;
     background-color: rgb(17, 17, 87);
     border: 0;
     border-radius: 0;
     font-family: 'DM Mono', monospace;
     box-shadow: 2px 2px 2px black;
+}
+
+.btnIgual {
+    padding-top: 50px;
+    margin-top: -40px;
+    background-color: rgb(45, 137, 198);
 }
 
 .bgTeclado {

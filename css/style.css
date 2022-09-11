@@ -1,3 +1,7 @@
+/* font de google*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+/* background de svg backgrund*/
 .fondo {
     min-height: 100vh;
     background-image: url('../img/endless-constellation.svg');
@@ -9,7 +13,6 @@
     margin: auto;
     border: 0 !important;
 }
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
 
 .pantalla {
     width: 100%;

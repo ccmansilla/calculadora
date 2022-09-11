@@ -1,7 +1,13 @@
+.fondo {
+    min-height: 100vh;
+    background-image: url('../img/endless-constellation.svg');
+}
+
 .calculadora {
     max-width: 900px;
     min-width: 600px;
     margin: auto;
+    border: 0 !important;
 }
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
 

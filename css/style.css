@@ -4,7 +4,7 @@
 /* background de svg backgrund*/
 .fondo {
     min-height: 100vh;
-    background-image: url('../img/endless-constellation.svg');
+    background-color: rgb(17, 17, 57);
 }
 
 .calculadora {

@@ -17,7 +17,14 @@ btn_ac.addEventListener('click', function() {
 let btn_igual = document.getElementById("=");
 btn_igual.addEventListener('click', function() {
         let calculo = pantalla.innerHTML;
-        pantalla.innerHTML = eval(calculo);
+        try{ 
+            pantalla.innerHTML = eval(calculo);        
+        }   
+        catch(error){   
+            pantalla.innerHTML = 0;
+            console.log(error); 
+        }
+        
     }
 ,false);
 

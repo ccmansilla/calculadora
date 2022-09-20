@@ -1,7 +1,5 @@
 /* pantalla */
 let pantalla = document.getElementById("pantalla");
-let suma = 1+1; 
-pantalla.innerHTML = `1+1=${suma}`;
 
 /* botones numeros */
 for(let i = 0; i <= 9; i++){
@@ -23,11 +21,15 @@ btn_igual.addEventListener('click', function() {
     }
 ,false);
 
-/* boton +*/
+/* botones operaciones*/
 addEventListenerBtn('+');
 addEventListenerBtn('-');
 addEventListenerBtn('/');
 addEventListenerBtn('*');
+
+/* botones parentesis */
+addEventListenerBtn('(');
+addEventListenerBtn(')');
 
 /* boton .*/
 addEventListenerBtn('.');

@@ -15,8 +15,19 @@ btn_ac.addEventListener('click', function() {
     }
 ,false);
 
+/* boton = */
+let btn_igual = document.getElementById("=");
+btn_igual.addEventListener('click', function() {
+        let calculo = pantalla.innerHTML;
+        pantalla.innerHTML = eval(calculo);
+    }
+,false);
+
 /* boton +*/
 addEventListenerBtn('+');
+addEventListenerBtn('-');
+addEventListenerBtn('/');
+addEventListenerBtn('*');
 
 /* boton .*/
 addEventListenerBtn('.');

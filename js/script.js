@@ -21,7 +21,7 @@ btn_igual.addEventListener('click', function() {
             pantalla.innerHTML = eval(calculo);        
         }   
         catch(error){   
-            pantalla.innerHTML = 0;
+            pantalla.innerHTML = '';
             console.log(error); 
         }
         

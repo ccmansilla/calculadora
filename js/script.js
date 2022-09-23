@@ -1,50 +1,22 @@
-/* pantalla */
-let pantalla = document.getElementById("pantalla");
+/* display */
+const display = document.getElementById("pantalla");
 
-/* botones numeros */
-for(let i = 0; i <= 9; i++){
-    addEventListenerBtn(i);
-}
+/* botones de teclado */
+const teclado = document.querySelectorAll(".btnCalc");
 
-/* boton AC*/
-let btn_ac = document.getElementById("ac");
-btn_ac.addEventListener('click', function() {
-        pantalla.innerHTML = '';
-    }
-,false);
+console.log(teclado);
 
-/* boton = */
-let btn_igual = document.getElementById("=");
-btn_igual.addEventListener('click', function() {
-        let calculo = pantalla.innerHTML;
-        try{ 
-            pantalla.innerHTML = eval(calculo);        
-        }   
-        catch(error){   
-            pantalla.innerHTML = '';
-            console.log(error); 
-        }
-        
-    }
-,false);
-
-/* botones operaciones*/
-addEventListenerBtn('+');
-addEventListenerBtn('-');
-addEventListenerBtn('/');
-addEventListenerBtn('*');
-
-/* botones parentesis */
-addEventListenerBtn('(');
-addEventListenerBtn(')');
-
-/* boton .*/
-addEventListenerBtn('.');
-
-function addEventListenerBtn(id){
-    let btn = document.getElementById(id);
+teclado.forEach(function(btn) {
     btn.addEventListener('click', function() {
-            pantalla.innerHTML += id;
+        if (btn.value === 'AC'){
+            display.innerHTML = '';
+        } else if(btn.value === '=') {
+            let calculo = eval(display.innerHTML);
+            display.innerHTML = calculo;
+        } 
+        else {
+            display.innerHTML += btn.value;
         }
+    }
     ,false);
-} 
+});

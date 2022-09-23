@@ -11,10 +11,12 @@ teclado.forEach(function(btn) {
         if (btn.value === 'AC'){
             display.innerHTML = '';
         } else if(btn.value === '=') {
-            let calculo = eval(display.innerHTML);
-            display.innerHTML = calculo;
-        } 
-        else {
+            try {
+                display.innerHTML = eval(display.innerHTML);
+            } catch (error) {
+                display.innerHTML = "ERROR";
+            }
+        } else {
             display.innerHTML += btn.value;
         }
     }

@@ -24,21 +24,30 @@ teclado.forEach(function(btn) {
             case 'x³':
                 display.innerHTML += 'Math.pow(';
                 funciones.innerHTML += ',3)';
-                break;    
+                break;   
+            case 'xⁿ':
+                funciones.innerHTML = ',' + display.innerHTML + ')';
+                display.innerHTML = 'Math.pow(';
+                break;  
             case '√':
                 display.innerHTML += 'Math.sqrt(';
+                funciones.innerHTML += ')';
                 break;     
             case '√n':
-                display.innerHTML += 'Math.sqrt(';
+                funciones.innerHTML = ',' + display.innerHTML + ')';
+                display.innerHTML = 'Math.sqrt(';
                 break;         
             case 'sin':
                 display.innerHTML += 'Math.sin(';
+                funciones.innerHTML += ')';
                 break;
             case 'cos':
                 display.innerHTML += 'Math.cos(';
+                funciones.innerHTML += ')';
                 break;
             case 'tg':
                 display.innerHTML += 'Math.tan(';
+                funciones.innerHTML += ')';
                 break;
             case 'π':
                 display.innerHTML += 'Math.PI ';
@@ -48,12 +57,15 @@ teclado.forEach(function(btn) {
                 break;
             case 'ln':
                 display.innerHTML += 'Math.log(';
+                funciones.innerHTML += ')';
                 break;
             case 'log':
                 display.innerHTML += 'Math.log10(';
+                funciones.innerHTML += ')';
                 break;
             case 'x!':
                 display.innerHTML += 'factorial(';
+                funciones.innerHTML += ')';
                 break;
             case '=':
                 try {

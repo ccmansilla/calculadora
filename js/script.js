@@ -1,13 +1,12 @@
 /* display */
-const display = document.getElementById("pantalla");
+const display = document.getElementById("resultado");
+const funciones = document.getElementById("funciones");
 
 /* botones de teclado */
 const teclado = document.querySelectorAll(".btnCalc");
 
 /* memoria */
 let memoria = 0;
-
-console.log(teclado);
 
 teclado.forEach(function(btn) {
     btn.addEventListener('click', function() {
@@ -20,9 +19,11 @@ teclado.forEach(function(btn) {
                 break;
             case 'x²':
                 display.innerHTML += 'Math.pow(';
+                funciones.innerHTML += ',2)';
                 break;                
             case 'x³':
                 display.innerHTML += 'Math.pow(';
+                funciones.innerHTML += ',3)';
                 break;    
             case '√':
                 display.innerHTML += 'Math.sqrt(';
@@ -56,10 +57,11 @@ teclado.forEach(function(btn) {
                 break;
             case '=':
                 try {
-                    display.innerHTML = eval(display.innerHTML);
+                    display.innerHTML = eval(display.innerHTML + funciones.innerHTML);
                 } catch (error) {
                     display.innerHTML = "ERROR";
                 }
+                funciones.innerHTML = '';
                 break;
             default:
                 display.innerHTML += btn.value;

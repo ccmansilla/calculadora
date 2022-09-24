@@ -8,9 +8,10 @@
 
 .calculadora {
     max-width: 900px;
-    min-width: 600px;
+    min-width: 420px;
     margin: auto;
     border: 2px solid black !important;
+    border-radius: 10px !important;
     box-shadow: 10px 10px 10px black !important;
 }
 

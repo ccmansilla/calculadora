@@ -10,8 +10,6 @@
     max-width: 900px;
     min-width: 320px;
     margin: auto;
-    border: 2px solid black !important;
-    border-radius: 10px !important;
     box-shadow: 10px 10px 10px black !important;
 }
 
@@ -48,6 +46,7 @@
 .btnIgual:hover {
     background-color: rgb(202, 112, 39) !important;
 }
+
 .bgTeclado {
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgb(37, 54, 161) 0%, rgb(38, 58, 210) 35%, rgba(0,212,255,1) 100%);

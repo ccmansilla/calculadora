@@ -39,7 +39,11 @@ teclado.forEach(function(btn) {
             case '√':
                 display.innerHTML += 'raiz(';
                 funciones.innerHTML += ')';
-                break;     
+                break;    
+            case '∛':
+                display.innerHTML += 'raizCubica(';
+                funciones.innerHTML += ')';
+                break;                     
             case '√n':
                 funciones.innerHTML =  display.innerHTML + ')';
                 display.innerHTML = 'raiz(';
@@ -89,6 +93,8 @@ teclado.forEach(function(btn) {
     ,false);
 });
 
+
+/* funciones en español */
 function factorial(n) {
     if (n > 1) {
         return n * factorial(n - 1);
@@ -109,7 +115,7 @@ function tangente(n) {
 }
 
 function potencia(b, e) {
-    return Math.pow(b,e)
+    return Math.pow(b, e);
 }
 
 function raiz(n) {
@@ -122,4 +128,8 @@ function ln(n) {
 
 function log(n) {
     return Math.log10(n);
+}
+
+function raizCubica(n) {
+    return Math.pow(n, 1/3);
 }

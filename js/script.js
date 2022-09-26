@@ -1,8 +1,10 @@
 /* display */
 const display = document.getElementById("resultado");
 
-/* acumulador de funciones */
-const funciones = document.getElementById("funciones");
+/* fornula anterior y posterior */
+let anterior = '';
+let posterior = '';
+let calculo = '';
 
 /* botones de teclado */
 const teclado = document.querySelectorAll(".btnCalc");
@@ -18,77 +20,80 @@ teclado.forEach(function(btn) {
     btn.addEventListener('click', function() {
         switch(btn.value) {
             case 'AC':
-                display.innerHTML = '';
-                funciones.innerHTML = '';
+                anterior = '';
+                posterior = '';
                 break;
             case 'MR':
-                display.innerHTML = memoria;
+                anterior = '';
+                posterior = '';
                 break;
-            case 'x²':
-                display.innerHTML += 'potencia(';
-                funciones.innerHTML += ',2)';
+            case 'x²':  
+                anterior += 'potencia(';
+                posterior = ',2)' + posterior;
                 break;                
             case 'x³':
-                display.innerHTML += 'potencia(';
-                funciones.innerHTML += ',3)';
+                anterior += 'potencia(';
+                posterior = ',3)' + posterior;
                 break;   
             case 'xⁿ':
-                funciones.innerHTML = ',' + display.innerHTML + ')';
-                display.innerHTML = 'potencia(';
+                posterior = ',' + anterior + posterior + ')';
+                anterior = 'potencia(';
                 break;  
-            case '√':
-                display.innerHTML += 'raiz(';
-                funciones.innerHTML += ')';
+            case '√':                
+                anterior += 'raiz(';
+                posterior = ')' + posterior;
                 break;    
             case '∛':
-                display.innerHTML += 'raizCubica(';
-                funciones.innerHTML += ')';
+                anterior += 'raizCubica(';
+                posterior = ')' + posterior;
                 break;                     
             case '√n':
-                funciones.innerHTML =  display.innerHTML + ')';
-                display.innerHTML = 'raiz(';
+                posterior = anterior + posterior + ')';
+                anterior = 'raiz(';
                 break;         
             case 'sin':
-                display.innerHTML += 'seno(';
-                funciones.innerHTML += ')';
+                anterior += 'seno(';
+                posterior = ')' + posterior;
                 break;
             case 'cos':
-                display.innerHTML += 'coseno(';
-                funciones.innerHTML += ')';
+                anterior += 'coseno(';
+                posterior = ')' + posterior;
                 break;
             case 'tg':
-                display.innerHTML += 'tangente(';
-                funciones.innerHTML += ')';
+                anterior += 'tangente(';
+                posterior = ')' + posterior;
                 break;
             case 'π':
-                display.innerHTML += 'π';
+                anterior += 'π';
                 break;
             case 'e':
-                display.innerHTML += 'e';
+                anterior += 'e';
                 break;
             case 'ln':
-                display.innerHTML += 'ln(';
-                funciones.innerHTML += ')';
+                anterior += 'ln(';
+                posterior = ')' + posterior;
                 break;
             case 'log':
-                display.innerHTML += 'log(';
-                funciones.innerHTML += ')';
+                anterior += 'log(';
+                posterior = ')' + posterior;
                 break;
             case 'x!':
-                display.innerHTML += 'factorial(';
-                funciones.innerHTML += ')';
-                break;
+                anterior += 'factorial(';
+                posterior = ')' + posterior;
+                break; 
             case '=':
                 try {
-                    display.innerHTML = eval(display.innerHTML + funciones.innerHTML);
+                    calculo = eval(anterior + posterior);
                 } catch (error) {
-                    display.innerHTML = "ERROR";
+                    calculo = "ERROR";
                 }
-                funciones.innerHTML = '';
+                anterior = calculo;
+                posterior = '';
                 break;
             default:
-                display.innerHTML += btn.value;
+                anterior += btn.value;
         }
+        display.innerHTML = anterior + posterior;
     }
     ,false);
 });

@@ -47,9 +47,9 @@ teclado.forEach(function(btn) {
                 anterior += 'raizCubica(';
                 posterior = ')' + posterior;
                 break;                     
-            case '√n':
-                posterior = anterior + posterior + ')';
-                anterior = 'raiz(';
+            case 'ⁿ√':
+                posterior = ',' + anterior + posterior + ')';
+                anterior = 'raiz_n(';
                 break;         
             case 'sin':
                 anterior += 'seno(';
@@ -125,6 +125,10 @@ function potencia(b, e) {
 
 function raiz(n) {
     return Math.sqrt(n);
+}
+
+function raiz_n(x,n) {
+    return Math.pow(x, 1/n);
 }
 
 function ln(n) {
